@@ -1,21 +1,28 @@
 <!DOCTYPE html>
+<!-- Johnathon Hoste, 3/3/2015, Project 1 -->
 <html>
 <head>
 <script id="vertex-shader" type="x-shader/x-vertex">
 attribute vec4 vPosition;
+attribute vec4 vColor;
+varying vec4 fColor;
+
+uniform mat4 mvMatrix;
 
 void main()
 {
-  gl_Position = vPosition;
+  gl_Position = mvMatrix * vPosition;
+  fColor = vColor;
 }
 </script>
 
 <script id="fragment-shader" type="x-shader/x-fragment">
 precision mediump float;
+varying vec4 fColor;
 
 void main()
 {
-gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
+	gl_FragColor = fColor;
 }
 </script>
 <script type="text/javascript" src="../Common/webgl-utils.js"></script>
@@ -24,8 +31,18 @@ gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
 <script type="text/javascript" src="project1.js"></script>
 </head>
 <body>
-<canvas id="gl-canvas" width="512" height="512">
+<h2>GALAGA (esk?) </h2>
+<b>Objective</b>: Do not let the aliens travel through this space sector (pass the yellow line). Your ship is invincible but has limited offensive capabilities <br>
+(Can only maintain four bullets on the screen in each direction). If too many aliens pass through the sector the game will end. <br>
+<b>Controls</b>: Use the WASD keys to move the ship and the L to fire. Pressing T will toggle between forward shooting bullets and sideward shooting bullets. <br>
+Press the start game button when ready. Press reset followed by start game to restart a game after a game over.
+<canvas id="gl-canvas" width="768" height="512">
 Oops ... your browser doesn't support the HTML5 canvas element
 </canvas>
+<p></p>
+<button id="startb" type="button" onclick="startG()">Start Game</button>
+<button id="resetb" type="button" onclick="resetG()">Reset</button>
+<b>Points: </b><span id="scorel"></span>
+<b>Lives: </b><span id="healthl"></span>
 </body>
 </html>

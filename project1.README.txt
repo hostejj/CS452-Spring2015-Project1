@@ -1,3 +1,17 @@
-name, date, description
+Johnathon Hoste, March 6 2015
 
-be sure to include complete details of how to interact with your game, the scoring system, and how to win
+The rules to interact with the game are located on the web page and also below:
+
+Objective: Do not let the aliens travel through this space sector (pass the yellow line).
+Your ship is invincible but has limited offensive capabilities 
+(Can only maintain four bullets on the screen in each direction). 
+If too many aliens pass through the sector the game will end. 
+
+Controls: Use the WASD keys to move the ship and the L to fire. 
+Pressing T will toggle between forward shooting bullets and sideward shooting bullets.
+Press the start game button when ready. Press reset followed by start game to restart a game after a game over.
+
+Scoring: One point is earned for each shot that hits an enemy ship. There is no winning,
+but the object is to get the highest possible score. Each green enemy that passes the line deducts 
+one life from the lives count, each purple enemy that passes deducts two lives. The game ends after lives
+are reduced to less than zero. 
